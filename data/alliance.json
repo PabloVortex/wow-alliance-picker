@@ -1,0 +1,77 @@
+{
+  "title": "Alliance Character Forge",
+  "game": "World of Warcraft: Forever",
+  "updated": "2026-09-23",
+  "source": {
+    "label": "Blizzard — Create the Hero You Want to Be in World of Warcraft: Forever",
+    "url": "https://worldofwarcraft.blizzard.com/en-us/news/24304075/"
+  },
+  "classes": [
+    {"name":"Druid","icon":"☘","role":"Tank / Heal / DPS","fantasy":"proměny, příroda, flexibilita"},
+    {"name":"Hunter","icon":"➶","role":"DPS","fantasy":"luk, lov a boj na dálku"},
+    {"name":"Mage","icon":"✦","role":"DPS","fantasy":"arcane, oheň a mráz"},
+    {"name":"Paladin","icon":"☀","role":"Tank / Heal / DPS","fantasy":"světlo, brnění a spravedlnost"},
+    {"name":"Priest","icon":"✧","role":"Heal / DPS","fantasy":"světlo a stín"},
+    {"name":"Rogue","icon":"◆","role":"DPS","fantasy":"stealth, jedy a přepady"},
+    {"name":"Shaman","icon":"ϟ","role":"Heal / DPS","fantasy":"elementy a totemy"},
+    {"name":"Warlock","icon":"⬢","role":"DPS","fantasy":"démoni, kletby a fel magie"},
+    {"name":"Warrior","icon":"⚔","role":"Tank / DPS","fantasy":"zbraně, zuřivost a těžké brnění"}
+  ],
+  "races": [
+    {
+      "name":"Human","slug":"human","subtitle":"Stormwind • univerzální hrdina","image":"./assets/official/human.webp","accent":"#d8ad4f",
+      "description":"Univerzální volba pro klasickou Alliance fantasy — rytíř, mág, kněz i nenápadný rogue.",
+      "classes":["Hunter","Mage","Paladin","Priest","Rogue","Warlock","Warrior"],
+      "racials":[
+        {"name":"Will to Survive","type":"active","text":"Odstraní stun."},
+        {"name":"Perception","type":"active","text":"Na 20 s pomáhá odhalovat stealthed nepřátele."},
+        {"name":"Sword Specialization","type":"passive","text":"Se swordem +2 % spell/ability critical chance."},
+        {"name":"The Human Spirit","type":"passive","text":"+5 % Spirit."}
+      ]
+    },
+    {
+      "name":"Dwarf","slug":"dwarf","subtitle":"Ironforge • odolnost a tradice","image":"./assets/official/dwarf.webp","accent":"#d56a44",
+      "description":"Kompaktní tank fantasy s puškami, kladivy a nově i silným shaman flavorom.",
+      "classes":["Hunter","Paladin","Priest","Rogue","Shaman","Warrior"],
+      "racials":[
+        {"name":"Stoneform","type":"active","text":"Imunita na Bleed, Poison a Disease a snížení Physical damage na 8 s."},
+        {"name":"Find Treasure","type":"active","text":"Sleduje blízké truhly s poklady."},
+        {"name":"Mace Specialization","type":"passive","text":"S mace +1 % spell/ability critical chance."},
+        {"name":"Big Game Hunter","type":"passive","text":"+5 % damage proti Beastům."}
+      ]
+    },
+    {
+      "name":"Night Elf","slug":"night-elf","subtitle":"Kalimdor • příroda a stíny","image":"./assets/official/night-elf.webp","accent":"#8b73d6",
+      "description":"Nejvýraznější volba pro druid/hunter fantasy: rychlost, příroda, dlouhé uši a Shadowmeld.",
+      "classes":["Druid","Hunter","Priest","Rogue","Warrior"],
+      "racials":[
+        {"name":"Elune’s Light","type":"active","text":"+10 % critical chance na 15 s."},
+        {"name":"Shadowmeld","type":"active","text":"Získáš Stealth, dokud stojíš na místě."},
+        {"name":"Quickness","type":"passive","text":"+1 % Dodge a +2 % run speed."},
+        {"name":"Wisp Spirit","type":"passive","text":"+75 % run speed po smrti."}
+      ]
+    },
+    {
+      "name":"Gnome","slug":"gnome","subtitle":"Gnomeregan • technika a chaos","image":"./assets/official/gnome.webp","accent":"#e987b7",
+      "description":"Malá postava, velká energie. Sedí k magii, warlockovi i rogueovi a má velmi technický charakter.",
+      "classes":["Mage","Priest","Rogue","Warlock","Warrior"],
+      "racials":[
+        {"name":"Escape Artist","type":"active","text":"Krátká imunita na Roots a Snares."},
+        {"name":"Eureka!","type":"active","text":"Nižší cost a +10 % damage/healing na další 3 spelly nebo ability."},
+        {"name":"Expansive Mind","type":"passive","text":"+5 % maximum Mana, Rage nebo Energy."},
+        {"name":"Engineering Specialization","type":"passive","text":"Spolehlivější engineering zařízení."}
+      ]
+    },
+    {
+      "name":"High Order Skyborne","shortName":"Skyborne","slug":"skyborne","subtitle":"Zephras Isle • nová rasa Forever","image":"./assets/official/skyborne.webp","accent":"#5bc6e8",
+      "description":"Nová Alliance větev Skyborne: vzduch, arcane dědictví a velmi čistá fantasy pro novou éru WoW: Forever.",
+      "classes":["Druid","Hunter","Mage","Rogue","Warrior"],
+      "racials":[
+        {"name":"Walk on Air","type":"active","text":"10 s kloužeš vzduchem směrem dolů."},
+        {"name":"Read Ley Line","type":"active","text":"Aktivuje ley line a dá +100 % Health a Mana regeneration."},
+        {"name":"Wind Blessed","type":"passive","text":"+1 % melee, ranged a spellcasting Haste."},
+        {"name":"Elemental Insight","type":"passive","text":"+5 % damage proti Elementalům."}
+      ]
+    }
+  ]
+}
