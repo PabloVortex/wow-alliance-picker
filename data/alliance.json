@@ -20,7 +20,7 @@
   "races": [
     {
       "name":"Human","slug":"human","subtitle":"Stormwind • univerzální hrdina",
-      "image":"https://static.wikia.nocookie.net/turtle-wow/images/1/11/Human_Paladin.png/revision/latest/scale-to-width-down/1200?cb=20250808225757",
+      "image":"./assets/races/human.webp",
       "accent":"#d8ad4f",
       "description":"Univerzální volba pro klasickou Alliance fantasy — rytíř, mág, kněz i nenápadný rogue.",
       "classes":["Hunter","Mage","Paladin","Priest","Rogue","Warlock","Warrior"],
@@ -33,7 +33,7 @@
     },
     {
       "name":"Dwarf","slug":"dwarf","subtitle":"Ironforge • odolnost a tradice",
-      "image":"https://www.mamytwink.com/upload/news/2018/septembre/17/muradin-bfa.jpg",
+      "image":"./assets/races/dwarf.webp",
       "accent":"#d56a44",
       "description":"Kompaktní tank fantasy s puškami, kladivy a nově i silným shaman flavorom.",
       "classes":["Hunter","Paladin","Priest","Rogue","Shaman","Warrior"],
@@ -46,7 +46,7 @@
     },
     {
       "name":"Night Elf","slug":"night-elf","subtitle":"Kalimdor • příroda a stíny",
-      "image":"https://wow.zamimg.com/uploads/screenshots/normal/811757-tyrande-whisperwind.jpg",
+      "image":"./assets/races/night-elf.webp",
       "accent":"#8b73d6",
       "description":"Nejvýraznější volba pro druid/hunter fantasy: rychlost, příroda, dlouhé uši a Shadowmeld.",
       "classes":["Druid","Hunter","Priest","Rogue","Warrior"],
@@ -59,7 +59,7 @@
     },
     {
       "name":"Gnome","slug":"gnome","subtitle":"Gnomeregan • technika a chaos",
-      "image":"https://static2.wikia.nocookie.net/__cb20070924190942/wowwiki/images/b/bf/GnomeFemale.jpg",
+      "image":"./assets/races/gnome.webp",
       "accent":"#e987b7",
       "description":"Malá postava, velká energie. Sedí k magii, warlockovi i rogueovi a má velmi technický charakter.",
       "classes":["Mage","Priest","Rogue","Warlock","Warrior"],
@@ -72,7 +72,7 @@
     },
     {
       "name":"High Order Skyborne","shortName":"Skyborne","slug":"skyborne","subtitle":"Zephras Isle • nová rasa Forever",
-      "image":"https://wow.zamimg.com/uploads/screenshots/normal/701164-void-elf.jpg",
+      "image":"./assets/races/skyborne.webp",
       "accent":"#5bc6e8",
       "description":"Nová Alliance větev Skyborne: vzduch, arcane dědictví a velmi čistá fantasy pro novou éru WoW: Forever.",
       "classes":["Druid","Hunter","Mage","Rogue","Warrior"],
