@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07111f" />
+  <title>Alliance Character Forge — WoW Forever</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="crest">A</span>
+      <span><b>Alliance</b><small>Character Forge</small></span>
+    </a>
+    <div class="top-actions">
+      <button id="resetBtn" class="ghost-button">Reset výběru</button>
+      <a id="sourceLink" class="source-link" target="_blank" rel="noreferrer">Zdroj ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">WORLD OF WARCRAFT: FOREVER • ALLIANCE</p>
+      <h1>Koho chceš hrát?</h1>
+      <p class="hero-copy">Vyber si fantasy, rasu a classu vizuálně. Každá rasa má vlastní artwork, vypsané racial abilities a pod nimi dostupné classy s obrázky pod sebou.</p>
+      <div class="hero-stats">
+        <div><strong id="raceCount">5</strong><span>Alliance ras</span></div>
+        <div><strong>9</strong><span>class</span></div>
+        <div><strong id="comboCount">28</strong><span>kombinací</span></div>
+      </div>
+    </section>
+
+    <section class="controls-panel">
+      <div class="control-row">
+        <div>
+          <span class="control-label">FILTR PODLE CLASSY</span>
+          <div id="classFilters" class="class-filters"></div>
+        </div>
+        <div class="view-toggle" aria-label="Přepnutí zobrazení">
+          <button class="view-button active" data-view="cards">Postavy</button>
+          <button class="view-button" data-view="matrix">Matrix</button>
+        </div>
+      </div>
+      <div id="activeHint" class="active-hint">Zobrazuji všechny Alliance možnosti.</div>
+    </section>
+
+    <section id="cardsView" class="race-grid"></section>
+    <section id="matrixView" class="matrix-shell hidden"></section>
+
+    <section id="selectionPanel" class="selection-panel hidden">
+      <div>
+        <span class="control-label">TVŮJ VÝBĚR</span>
+        <h2 id="selectionTitle">Human Warrior</h2>
+        <p id="selectionText"></p>
+      </div>
+      <button id="clearSelection" class="primary-button">Vybrat jinak</button>
+    </section>
+  </main>
+
+  <dialog id="raceDialog" class="race-dialog">
+    <button id="closeDialog" class="dialog-close" aria-label="Zavřít">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <footer>
+    <span>Fan-made visual picker • race/class data dle Blizzard oznámení</span>
+    <span id="updatedText"></span>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
