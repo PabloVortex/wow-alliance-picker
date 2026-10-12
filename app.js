@@ -1,4 +1,5 @@
 let data;
+let faction = 'alliance';
 let activeClass = null;
 let currentView = 'cards';
 let selected = null;
@@ -16,11 +17,17 @@ const els = {
   updatedText: document.querySelector('#updatedText'),
   selectionPanel: document.querySelector('#selectionPanel'),
   selectionTitle: document.querySelector('#selectionTitle'),
-  selectionText: document.querySelector('#selectionText')
+  selectionText: document.querySelector('#selectionText'),
+  crest: document.querySelector('#crest'),
+  brandFaction: document.querySelector('#brandFaction'),
+  eyebrow: document.querySelector('#eyebrow'),
+  raceLabel: document.querySelector('#raceLabel'),
+  factionButtons: [...document.querySelectorAll('.faction-button')]
 };
 
 const classMeta = (name) => data.classes.find(c => c.name === name);
 const comboCount = () => data.races.reduce((n, r) => n + r.classes.length, 0);
+const factionName = () => faction === 'alliance' ? 'Alliance' : 'Horde';
 
 function renderClassFilters() {
   els.classFilters.innerHTML = data.classes.map(c => `
@@ -131,7 +138,7 @@ function renderMatrix() {
 
 function renderHint() {
   if (!activeClass) {
-    els.activeHint.textContent = `Zobrazuji všech ${data.races.length} Alliance ras a ${comboCount()} race/class kombinací.`;
+    els.activeHint.textContent = `Zobrazuji všech ${data.races.length} ${factionName()} ras a ${comboCount()} race/class kombinací.`;
   } else {
     const matches = data.races.filter(r => r.classes.includes(activeClass));
     els.activeHint.textContent = `${activeClass}: ${matches.map(r => r.shortName || r.name).join(' • ')}`;
@@ -183,7 +190,10 @@ function openRace(slug) {
       </div>
     </div>`;
 
-  els.dialogContent.querySelectorAll('[data-dialog-pick]').forEach(btn => btn.addEventListener('click', () => { choose(race.slug, btn.dataset.dialogPick); els.dialog.close(); }));
+  els.dialogContent.querySelectorAll('[data-dialog-pick]').forEach(btn => btn.addEventListener('click', () => {
+    choose(race.slug, btn.dataset.dialogPick);
+    els.dialog.close();
+  }));
   els.dialog.showModal();
 }
 
@@ -205,27 +215,55 @@ function reset() {
   renderAll();
 }
 
+function renderFactionChrome() {
+  document.body.dataset.faction = faction;
+  const name = factionName();
+  els.crest.textContent = faction === 'alliance' ? 'A' : 'H';
+  els.brandFaction.textContent = name;
+  els.eyebrow.textContent = `WORLD OF WARCRAFT: FOREVER • ${name.toUpperCase()}`;
+  els.raceLabel.textContent = `${name} ras`;
+  els.factionButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.faction === faction));
+  document.title = `${name} Character Forge — WoW Forever`;
+}
+
 function renderAll() {
+  renderFactionChrome();
   renderClassFilters();
   renderCards();
   renderMatrix();
   renderHint();
 }
 
-async function init() {
-  const response = await fetch('./data/alliance.json');
+async function loadFaction(nextFaction, updateHash = true) {
+  faction = nextFaction === 'horde' ? 'horde' : 'alliance';
+  activeClass = null;
+  selected = null;
+  els.selectionPanel.classList.add('hidden');
+
+  const response = await fetch(`./data/${faction}.json`, { cache: 'no-store' });
+  if (!response.ok) throw new Error(`Failed to load ${faction} data`);
   data = await response.json();
+
   els.sourceLink.href = data.source.url;
   els.raceCount.textContent = data.races.length;
   els.comboCount.textContent = comboCount();
   els.updatedText.textContent = `Aktualizováno ${data.updated}`;
+
+  if (updateHash) history.replaceState(null, '', `#${faction}`);
   renderAll();
 }
 
+async function init() {
+  const initial = location.hash.toLowerCase() === '#horde' ? 'horde' : 'alliance';
+  await loadFaction(initial, false);
+}
+
+els.factionButtons.forEach(btn => btn.addEventListener('click', () => loadFaction(btn.dataset.faction)));
 document.querySelector('#resetBtn').addEventListener('click', reset);
 document.querySelector('#clearSelection').addEventListener('click', reset);
 document.querySelector('#closeDialog').addEventListener('click', () => els.dialog.close());
 els.dialog.addEventListener('click', (e) => { if (e.target === els.dialog) els.dialog.close(); });
+
 document.querySelectorAll('.view-button').forEach(btn => btn.addEventListener('click', () => {
   currentView = btn.dataset.view;
   document.querySelectorAll('.view-button').forEach(b => b.classList.toggle('active', b === btn));
@@ -235,5 +273,5 @@ document.querySelectorAll('.view-button').forEach(btn => btn.addEventListener('c
 
 init().catch(err => {
   console.error(err);
-  document.body.innerHTML = '<main style="padding:40px;color:#1f2937"><h1>Nepodařilo se načíst data.</h1><p>Zkontroluj, že je web spuštěný přes web server (např. GitHub Pages).</p></main>';
+  document.body.innerHTML = '<main style="padding:40px;color:#1f2937"><h1>Nepodařilo se načíst data.</h1><p>Zkontroluj GitHub Pages deployment.</p></main>';
 });
