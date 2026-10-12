@@ -1,0 +1,77 @@
+{
+  "title": "Horde Character Forge",
+  "game": "World of Warcraft: Forever",
+  "updated": "2026-10-12",
+  "source": {
+    "label": "Blizzard — Create the Hero You Want to Be in World of Warcraft: Forever",
+    "url": "https://worldofwarcraft.blizzard.com/en-us/news/24304075/"
+  },
+  "classes": [
+    {"name":"Druid","icon":"☘","role":"Tank / Heal / DPS","fantasy":"proměny, příroda, flexibilita"},
+    {"name":"Hunter","icon":"➶","role":"DPS","fantasy":"luk, lov a boj na dálku"},
+    {"name":"Mage","icon":"✦","role":"DPS","fantasy":"arcane, oheň a mráz"},
+    {"name":"Paladin","icon":"☀","role":"Tank / Heal / DPS","fantasy":"světlo, brnění a spravedlnost"},
+    {"name":"Priest","icon":"✧","role":"Heal / DPS","fantasy":"světlo a stín"},
+    {"name":"Rogue","icon":"◆","role":"DPS","fantasy":"stealth, jedy a přepady"},
+    {"name":"Shaman","icon":"ϟ","role":"Heal / DPS","fantasy":"elementy a totemy"},
+    {"name":"Warlock","icon":"⬢","role":"DPS","fantasy":"démoni, kletby a fel magie"},
+    {"name":"Warrior","icon":"⚔","role":"Tank / DPS","fantasy":"zbraně, zuřivost a těžké brnění"}
+  ],
+  "races": [
+    {
+      "name":"Orc","slug":"orc","subtitle":"Orgrimmar • síla a odolnost","image":"./assets/races/horde/orc.webp","accent":"#a74738",
+      "description":"Klasická Horde fantasy: brutální warrior, shaman, hunter i nově mage. Orc je přímočarý, agresivní a velmi univerzální.",
+      "classes":["Hunter","Mage","Rogue","Shaman","Warlock","Warrior"],
+      "racials":[
+        {"name":"Blood Fury","type":"active","text":"+10 % Attack Power a Spell Power na 15 s."},
+        {"name":"Shatter Curse","type":"active","text":"Odstraní Curses a Banes, krátce vůči nim imunizuje a sníží magic damage."},
+        {"name":"Axe Specialization","type":"passive","text":"S axe nebo two-handed axe +1 % critical strike chance."},
+        {"name":"Hardiness","type":"passive","text":"Stuny na tobě trvají o 20 % kratší dobu."}
+      ]
+    },
+    {
+      "name":"Tauren","slug":"tauren","subtitle":"Mulgore • země, síla a klid","image":"./assets/races/horde/tauren.webp","accent":"#b77b45",
+      "description":"Velká, fyzická fantasy s přírodou a spiritualitou. Silný fit pro Warrior, Hunter, Shaman i Druid.",
+      "classes":["Druid","Hunter","Shaman","Warrior"],
+      "racials":[
+        {"name":"War Stomp","type":"active","text":"Stun až 5 nepřátel v okolí na 2 s; funguje i v Druid formách."},
+        {"name":"Cultivation","type":"active","text":"U herbu vypěstuje bonusovou bylinu, kterou lze sebrat i bez Herbalismu."},
+        {"name":"Plainsrunning","type":"passive","text":"Při souvislém pohybu postupně získáváš až +30 % movement speed."},
+        {"name":"Endurance","type":"passive","text":"+5 % celkového Health a +1 % Hit Chance."}
+      ]
+    },
+    {
+      "name":"Troll","slug":"troll","subtitle":"Darkspear • rychlost a lov","image":"./assets/races/horde/troll.webp","accent":"#3da4a3",
+      "description":"Rychlá Horde fantasy s výrazným lovcem a casterem. Troll má široký výběr class a silné tempo v boji.",
+      "classes":["Hunter","Mage","Priest","Rogue","Shaman","Warlock","Warrior"],
+      "racials":[
+        {"name":"Berserking","type":"active","text":"+10 % attack a casting speed na 10 s."},
+        {"name":"Rapid Regeneration","type":"active","text":"6 s channel, který obnoví 50 % maximálního Health."},
+        {"name":"Beast Slaying","type":"passive","text":"+5 % damage proti Beastům."},
+        {"name":"Regeneration","type":"passive","text":"+10 % health regeneration; část regenerace pokračuje i v combat."}
+      ]
+    },
+    {
+      "name":"Undead","slug":"undead","subtitle":"Forsaken • temnota a vzdor","image":"./assets/races/horde/undead.webp","accent":"#7d9b6f",
+      "description":"Temná Forsaken fantasy s výbornými utility racialy a nově i Paladinem. Silný fit pro castery, rogue i warrior.",
+      "classes":["Mage","Paladin","Priest","Rogue","Warlock","Warrior"],
+      "racials":[
+        {"name":"Will of the Forsaken","type":"active","text":"Okamžitě odstraní Charm, Fear a Sleep efekty."},
+        {"name":"Cannibalize","type":"active","text":"Z Humanoid/Undead corpse obnovuje Health i Mana po dobu 10 s."},
+        {"name":"Underwater Breathing","type":"passive","text":"Pod vodou vydržíš bez dechu o 300 % déle."},
+        {"name":"Touch of the Grave","type":"passive","text":"Útoky a spelly mohou vysát Health z cíle a vyléčit tě."}
+      ]
+    },
+    {
+      "name":"Windshaper Skyborne","shortName":"Windshaper","slug":"windshaper-skyborne","subtitle":"Zephras Isle • vítr a elementy","image":"./assets/races/horde/skyborne.webp","accent":"#d07a3a",
+      "description":"Horde větev Skyborne: stejná vzdušná mobilita, ale místo arcane tradice je zaměřená na elementy a Shamana.",
+      "classes":["Druid","Hunter","Rogue","Shaman","Warrior"],
+      "racials":[
+        {"name":"Walk on Air","type":"active","text":"10 s kloužeš vzduchem směrem dolů."},
+        {"name":"Skysight","type":"active","text":"Elemental Blessing zvyšuje movement a mounted movement speed o 10 %."},
+        {"name":"Wind Blessed","type":"passive","text":"+1 % melee, ranged a spellcasting Haste."},
+        {"name":"Elemental Insight","type":"passive","text":"+5 % damage proti Elementalům."}
+      ]
+    }
+  ]
+}
