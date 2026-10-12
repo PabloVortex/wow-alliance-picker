@@ -213,3 +213,78 @@ footer { width:min(1460px,calc(100% - 36px)); margin:0 auto; padding:24px 0 38px
 .controls-panel .view-toggle { background: rgba(247,250,255,.94); border-color: rgba(194,208,226,.9); }
 .controls-panel .view-button.active { background: #dfe9f6; }
 .race-card::before { content:""; display:block; height:3px; background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 60%, #6c98d7 40%), transparent); opacity:.75; }
+
+/* Alliance / Horde switch */
+.faction-switch {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  border: 1px solid rgba(132,164,209,.20);
+  border-radius: 12px;
+  background: rgba(9, 23, 47, .78);
+}
+.faction-button {
+  border: 0;
+  background: transparent;
+  color: #9fb1c9;
+  padding: 8px 12px;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+.faction-button:hover { color: #fff; }
+.faction-button.active {
+  color: #fff;
+  background: linear-gradient(180deg, #275a9e, #173d72);
+  box-shadow: 0 4px 16px rgba(24, 74, 139, .28);
+}
+
+/* Horde keeps the cosmic darkness but shifts the glow toward crimson/ember. */
+body[data-faction="horde"] {
+  background:
+    radial-gradient(circle at 14% 8%, rgba(155, 34, 43, 0.32), transparent 30%),
+    radial-gradient(circle at 86% 18%, rgba(120, 45, 25, 0.22), transparent 27%),
+    radial-gradient(circle at 48% 62%, rgba(80, 22, 30, 0.18), transparent 38%),
+    linear-gradient(180deg, #15070d 0%, #08050b 46%, #030207 100%);
+}
+body[data-faction="horde"] .ambient-a { background: #a52332; }
+body[data-faction="horde"] .ambient-b { background: #7a3f1f; }
+body[data-faction="horde"] .topbar {
+  border-bottom-color: rgba(205, 103, 91, .15);
+  background: rgba(18, 5, 10, .82);
+}
+body[data-faction="horde"] .crest {
+  color: #f0b06b;
+  border-color: #b05a49;
+  background: linear-gradient(145deg, rgba(77,20,27,.95), rgba(30,7,12,.95));
+  box-shadow: inset 0 0 20px rgba(180,65,54,.18), 0 0 24px rgba(135,37,32,.14);
+}
+body[data-faction="horde"] .eyebrow,
+body[data-faction="horde"] .controls-panel .control-label {
+  color: #df9b62;
+}
+body[data-faction="horde"] .controls-panel {
+  border-color: rgba(190, 92, 78, .18);
+  background: linear-gradient(180deg, rgba(62, 17, 27, .75), rgba(29, 8, 15, .78));
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .38), inset 0 1px 0 rgba(255,255,255,.03);
+}
+body[data-faction="horde"] .active-hint { color: #c1a19e; }
+body[data-faction="horde"] .faction-switch {
+  border-color: rgba(195, 91, 79, .24);
+  background: rgba(48, 10, 17, .8);
+}
+body[data-faction="horde"] .faction-button.active {
+  background: linear-gradient(180deg, #9b342e, #6f201e);
+  box-shadow: 0 4px 16px rgba(139, 38, 31, .30);
+}
+body[data-faction="horde"] footer {
+  border-top-color: rgba(190, 92, 78, .14);
+  color: #9f8585;
+}
+
+@media (max-width: 700px) {
+  .faction-switch { order: -1; width: 100%; }
+  .faction-button { flex: 1; }
+}
