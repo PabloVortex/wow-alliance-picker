@@ -16,10 +16,14 @@
 
   <header class="topbar">
     <a class="brand" href="#">
-      <span class="crest">A</span>
-      <span><b>Alliance</b><small>Character Forge</small></span>
+      <span id="crest" class="crest">A</span>
+      <span><b id="brandFaction">Alliance</b><small>Character Forge</small></span>
     </a>
     <div class="top-actions">
+      <div class="faction-switch" aria-label="Faction">
+        <button class="faction-button active" data-faction="alliance">Alliance</button>
+        <button class="faction-button" data-faction="horde">Horde</button>
+      </div>
       <button id="resetBtn" class="ghost-button">Reset výběru</button>
       <a id="sourceLink" class="source-link" target="_blank" rel="noreferrer">Zdroj ↗</a>
     </div>
@@ -27,11 +31,11 @@
 
   <main>
     <section class="hero">
-      <p class="eyebrow">WORLD OF WARCRAFT: FOREVER • ALLIANCE</p>
+      <p id="eyebrow" class="eyebrow">WORLD OF WARCRAFT: FOREVER • ALLIANCE</p>
       <h1>Koho chceš hrát?</h1>
-      <p class="hero-copy">Vyber si fantasy, rasu a classu vizuálně. Každá rasa má vlastní artwork, vypsané racial abilities a pod nimi dostupné classy s obrázky pod sebou.</p>
+      <p class="hero-copy">Přepni Alliance nebo Horde a vyber si fantasy, rasu a classu vizuálně. Každá rasa má vlastní artwork, racial abilities a dostupné classy.</p>
       <div class="hero-stats">
-        <div><strong id="raceCount">5</strong><span>Alliance ras</span></div>
+        <div><strong id="raceCount">5</strong><span id="raceLabel">Alliance ras</span></div>
         <div><strong>9</strong><span>class</span></div>
         <div><strong id="comboCount">28</strong><span>kombinací</span></div>
       </div>
